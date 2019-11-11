@@ -16,6 +16,9 @@ public class Dashbaord extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashbaord);
 
+
+        getSupportActionBar().setTitle("Dashbaord");
+
         btn1 = findViewById(R.id.button1);
         btn2 = findViewById(R.id.button2);
 

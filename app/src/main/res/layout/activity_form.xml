@@ -8,28 +8,28 @@
     tools:context=".Form">
 
 
-      <TextView
-          android:id="@+id/txttil"
-          android:layout_width="match_parent"
-          android:layout_height="30dp"
-          android:text="Personal"
-          android:gravity="center"/>
+    <TextView
+        android:id="@+id/txttil"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="Personal" />
+
 
     <EditText
         android:id="@+id/etname"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:hint="enter Name"
         app:layout_constraintTop_toBottomOf="@id/txttil"
-        android:hint="enter Name" />
-
-
+        tools:layout_editor_absoluteX="-16dp" />
 
     <EditText
         android:id="@+id/etphone"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="enter Phone"
-        app:layout_constraintTop_toBottomOf="@id/etname"/>
+        app:layout_constraintTop_toBottomOf="@id/etname" />
 
     <Spinner
         android:id="@+id/spin1"
@@ -44,8 +44,8 @@
         android:id="@+id/btnreg"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:layout_constraintTop_toBottomOf="@id/spin1"
+        android:text="Register"
 
-        android:text="Register" />
+        app:layout_constraintTop_toBottomOf="@id/spin1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">President of USA</string>
+    
+    <string-array name="address">
+       <item>Kathmandu</item>
+        <item>Pokhara</item>
+        <item>Birthnagar</item>
+        <item>Dharan</item>
+        <item>Ithari</item>
+        <item>Nepalgunji</item>
+        <item>Illam</item>
+        <item>Kathmandu</item>
+    </string-array>
 </resources>

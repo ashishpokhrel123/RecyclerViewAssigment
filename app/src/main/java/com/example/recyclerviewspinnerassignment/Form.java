@@ -5,29 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
-public class Form extends AppCompatActivity {
+public class Form extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     EditText et1,et2,et3;
     Spinner spiner1;
     Button btn1;
 
-    public static final String address[]={
-            "Kathmandu",
-            "Pokhara",
-            "Birthnagar",
-            "Dharan",
-            "Ithari",
-            "Nepalgunj",
-            "BUtwal",
-            "Lumbini",
-            "Illam",
-            "Nuwakot"
-    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +26,18 @@ public class Form extends AppCompatActivity {
         setContentView(R.layout.activity_form);
 
 
+        getSupportActionBar().setTitle("Personal");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         initView();
+        final Spinner spinner = findViewById(R.id.spin1);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.address,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
 
-        ArrayAdapter adapter = new ArrayAdapter<>(this,
-                R.layout.support_simple_spinner_dropdown_item,
-                address);
 
-        spiner1.setAdapter(adapter);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +65,16 @@ public class Form extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String text = parent.getItemAtPosition(position).toString();
+        Toast.makeText(parent.getContext(),text,Toast.LENGTH_LONG).show();
 
     }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+}
 

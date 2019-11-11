@@ -1,16 +1,17 @@
 package com.example.recyclerviewspinnerassignment;
 
 import android.os.Bundle;
-import android.widget.Spinner;
+
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Data extends AppCompatActivity {
 
     TextView tvName, tvphone, tvaddress;
-    Spinner address;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,16 +20,18 @@ public class Data extends AppCompatActivity {
 
         tvName = findViewById(R.id.etname);
         tvphone = findViewById(R.id.etphone);
-        address = findViewById(R.id.spin1);
+        tvaddress = findViewById(R.id.desc);
 
         Bundle bundleForm = getIntent().getExtras();
         if(bundleForm != null){
             tvName.setText(bundleForm.getString("formName"));
-            tvphone.setText(bundleForm.getString("formPhone"));
-            tvaddress.setText(bundleForm.getString("formAddress"));
+            tvphone.setText(bundleForm.getString("formEmail"));
+            tvaddress.setText(bundleForm.getString("formCountry"));
         }
         else{
             Toast.makeText(this, "No Message", Toast.LENGTH_LONG).show();
         }
+
+
     }
 }
